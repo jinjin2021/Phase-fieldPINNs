@@ -219,51 +219,7 @@ def run(cfg: ModulusConfig) -> None:
         )
         domain.add_constraint(ic, f"ic{i:04d}")
 
-# c0=0.05, cBeta_eq=1.0
-    # add open boundary constraint
-   # ic = PointwiseInteriorConstraint(
-       # nodes=nodes,
-       # geometry=rec-cir,
-       # outvar={"c": 0.05, "eta": 0.0},
-       # batch_size=1024,
-       # bounds=box_bounds,
-       # lambda_weighting={"c": 0.01 * time_length, "eta": 0.01 * time_length},
-       # parameterization=time_range,
-    #)
-    #domain.add_constraint(ic, "ic")
-    
-    #ic_eta = PointwiseInteriorConstraint(
-       # nodes=nodes,
-        #geometry=rec-cir,
-       # outvar={"eta": 0.0},
-       # batch_size=1024,
-       # bounds=box_bounds,
-       # lambda_weighting={"eta": 0.01 * time_length},
-       # parameterization=time_range,
-    #)
-    #domain.add_constraint(ic_eta, "ic_eta")
 
-    #ic_cir = PointwiseInteriorConstraint(
-     #   nodes=nodes,
-      #  geometry=cir,
-       # outvar={"c": 1.0, "eta": 1.0},
-       # batch_size=1024,
-       # bounds=box_bounds,
-       # lambda_weighting={"c": 0.01 * time_length, "eta": 0.01 * time_length},
-       # parameterization=time_range,
-    #)
-    #domain.add_constraint(ic_cir, "ic_cir")
-
-    #ic_cir_eta = PointwiseInteriorConstraint(
-       # nodes=nodes,
-       # geometry=cir,
-       # outvar={"eta": 1.0},
-       # batch_size=1024,
-       # bounds=box_bounds,
-       # lambda_weighting={"eta": 0.01 * time_length},
-       # parameterization=time_range,
-    #)
-    #domain.add_constraint(ic_cir_eta, "ic_cir_eta")
 
     # add validators
     for i, ms in enumerate(np.arange(0, 1100,100)):
@@ -284,7 +240,7 @@ def run(cfg: ModulusConfig) -> None:
 #    end_time = time.time()
 
  #   elapsed_time = end_time - start_time
-  #  f = open('/home/ggangmei/PINNs2D_data/imp_50pTD512t0.2_seed100_inference.txt', 'w')
+  #  f = open('/home/inference.txt', 'w')
    # f.write(str(elapsed_time))
     #f.close()
 
